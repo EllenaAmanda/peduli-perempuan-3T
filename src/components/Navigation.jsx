@@ -2,7 +2,7 @@ import logo from '../assets/PP3T Logo.svg'
 
 function Navigation() {
   return (
-    <div className="px-24 py-4 border-b-2">
+    <div className="px-24 py-4">
         <nav className="flex justify-between items-center">
             <div className='flex gap-2'>
                 <img src={logo} className='w-12'/>
@@ -15,7 +15,7 @@ function Navigation() {
                 <li >Donate</li>
             </ul>
 
-            <button className='bg-byzantine text-white font-semibold py-2 px-3 rounded'>Log Out</button>
+            <a className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Log Out</a>
         </nav>
     </div>
   )
