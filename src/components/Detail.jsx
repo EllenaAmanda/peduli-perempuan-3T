@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from 'react'
-import { DataContext } from '../DataProvider'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 function Detail() {
-    const { dataPerempuan, setDataPerempuan } = useContext(DataContext)
+    const [ dataPerempuan, setDataPerempuan ] = useState({})
     const {id} = useParams ()
 
 
@@ -21,20 +20,24 @@ function Detail() {
     console.log(dataPerempuan)
   return (
     <div className='py-16 px-24'>
-        
-        <h2 className='text-center text-3xl font-thin mb-16'>{dataPerempuan.judul}</h2>
+      
+      {dataPerempuan.length == 0 ? <h1>Loading...</h1> : 
+        <div>
+            <h2 className='text-center text-3xl font-thin mb-16'>{dataPerempuan.judul}</h2>
 
-        <div className='grid grid-cols-3 grid-rows-2 w-full'>
-            <img src={dataPerempuan.avatar} className= 'w-2/3 row-span-2' />
-            <div><h4 className='text-byzantine font-semibold'>Nama</h4><p>{dataPerempuan.name}</p></div>
-            <div><h4 className='text-byzantine font-semibold'>Asal Daerah</h4><p></p>{dataPerempuan.daerah}</div>
-            <div className='col-span-2'><h4 className='text-byzantine font-semibold'>Kisahku</h4><p>{dataPerempuan.deskripsi}</p></div>
+            <div className='grid grid-cols-3 grid-rows-2 w-full'>
+                <img src={dataPerempuan.avatar} className= 'w-2/3 row-span-2' />
+                <div><h4 className='text-byzantine font-semibold'>Nama</h4><p>{dataPerempuan.name}</p></div>
+                <div><h4 className='text-byzantine font-semibold'>Asal Daerah</h4><p></p>{dataPerempuan.daerah}</div>
+                <div className='col-span-2'><h4 className='text-byzantine font-semibold'>Kisahku</h4><p>{dataPerempuan.deskripsi}</p></div>
+            </div>
+            <div className='mt-8 grid grid-cols-2 w-1/4 grid-rows-2'>
+              <span className='text-byzantine font-semibold'>Dana terkumpul (Rp) </span><h3 className='text-end'> {dataPerempuan.terkumpul} </h3>
+              <span className='text-byzantine font-semibold'>Target Dana (Rp)  </span><h3 className='text-end'>{dataPerempuan.target} </h3>
+              <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer col-span-2 mt-4 text-center'>Donasi</span>
+            </div>
         </div>
-        <div className='mt-8 grid grid-cols-2 w-1/4 grid-rows-2'>
-          <span className='text-byzantine font-semibold'>Dana terkumpul (Rp) </span><h3 className='text-end'> {dataPerempuan.terkumpul} </h3>
-          <span className='text-byzantine font-semibold'>Target Dana (Rp)  </span><h3 className='text-end'>{dataPerempuan.target} </h3>
-          <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer col-span-2 mt-4 text-center'>Donasi</span>
-        </div>
+      }
     </div>
   )
 }

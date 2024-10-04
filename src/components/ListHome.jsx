@@ -36,7 +36,7 @@ function ListHome() {
             <h1 className="text-center font-thin text-4xl mb-4">Perempuan 3T Membutuhkan Bantuan Mu!</h1>
             <p className="text-center">Bantu perempuan daerah 3T tersebut agar mereka dapat melanjutkan pendidikan mereka.</p>
             
-            {/* {digimons.length == 0 ? <h1>Loading...</h1> :  */}
+            {dataPerempuan.length == 0 ? <h1>Loading...</h1> : 
             <div className="grid grid-cols-4 gap-4 pt-16">
                 
                 {dataPerempuan.map((item,index) => (
@@ -48,7 +48,7 @@ function ListHome() {
                 ))}
             </div>
 
-            {/* } */}
+            }
 
 
         <div className="flex justify-center mt-10">
