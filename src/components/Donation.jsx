@@ -1,12 +1,17 @@
 import { useState } from "react";
 
-function Donation() {
+function Donation({ id, currentTerkumpul, onDonationSuccess }) {
     const [donation, setDonation] = useState(0);
+    
     const nilai = [10000,50000,750000,100000]
     function handleNilai(item){
         setDonation(item)
     }
 
+    function submit(e){
+        e.preventDefault()
+        
+    }
   return (
     
     <div>
@@ -30,7 +35,7 @@ function Donation() {
                     />
                     
                 </div>
-                <button className="bg-byzantine text-white font-semibold py-2 px-4 rounded">
+                <button onClick={submit} className="bg-byzantine text-white font-semibold py-2 px-4 rounded">
                         Donate
                 </button>
             </form>

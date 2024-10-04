@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 function Detail() {
     const [ dataPerempuan, setDataPerempuan ] = useState({})
@@ -34,7 +34,8 @@ function Detail() {
             <div className='mt-8 grid grid-cols-2 w-1/4 grid-rows-2'>
               <span className='text-byzantine font-semibold'>Dana terkumpul (Rp) </span><h3 className='text-end'> {dataPerempuan.terkumpul} </h3>
               <span className='text-byzantine font-semibold'>Target Dana (Rp)  </span><h3 className='text-end'>{dataPerempuan.target} </h3>
-               <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer col-span-2 mt-4 text-center'>Donasi</span>
+               
+              <Link to={`/donate/${id}`} className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer col-span-2 mt-4 text-center'><span >Donasi</span></Link>
             </div>
         </div>
       }
