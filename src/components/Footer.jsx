@@ -5,7 +5,8 @@ import ig from '../assets/insta.svg'
 function Footer() {
   return (
     <div className='bg-byzantine'>
-        <div className='container mx-auto '>
+        {/* <div className='container mx-auto '> */}
+        <div className='px-16'>
         <footer className="py-8 grid grid-cols-3 grid-rows-3 items-center">
             <div className='flex gap-2 pb-4'>
                 <img src={logo} className='w-8'/>
@@ -23,7 +24,7 @@ function Footer() {
 
             <hr className='col-span-3'/>
             <div className='flex justify-between col-span-3'>
-                <p className='text-white'> &copy;2024 Peduli Perempuan 3T. All rights reserved </p>
+                <p className='text-white font-thin'> &copy;2024 Peduli Perempuan 3T. All rights reserved </p>
                 <div className='flex gap-3 text-white'>
                     <p>(+62) 812-3456-7890</p>
                     <p>·</p>
