@@ -1,4 +1,10 @@
+import { useContext } from "react"
+import { DataContext } from "../DataProvider"
+
 function CardHome() {
+    const { dataPerempuan, setDataPerempuan } = useContext(DataContext)
+    
+    console.log(dataPerempuan)
   return (
     <div className=" grid grid-cols-4 gap-4 pt-16">
         <article>
@@ -6,7 +12,7 @@ function CardHome() {
                 <div className="flex gap-4 items-center">
                     <img src="https://avatar.iran.liara.run/public/69" className="w-12 h-12"/>
                     <div className="">
-                        <h5 className="text-byzantine font-semibold">Pal Sriadi</h5>
+                        <h5 className="text-byzantine font-semibold">{dataPerempuan[0].name}</h5>
                         <p className="font-thin">Maluku Utara</p>
                     </div>
                     
