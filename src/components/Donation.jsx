@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Donation({ id, currentTerkumpul, onDonationSuccess }) {
+function Donation() {
     const [donation, setDonation] = useState(0);
-    
+    const [error, setError] = useState('')
+
+    let navigate = useNavigate();
+
     const nilai = [10000,50000,750000,100000]
     function handleNilai(item){
         setDonation(item)
@@ -11,7 +14,11 @@ function Donation({ id, currentTerkumpul, onDonationSuccess }) {
 
     function submit(e){
         e.preventDefault()
-
+        if (donation == 0) {
+            setError('Maaf nominal yang di input masih 0')
+        }else {
+            navigate('/confirmation')
+        }
     }
   return (
     
@@ -30,17 +37,21 @@ function Donation({ id, currentTerkumpul, onDonationSuccess }) {
                 <p className='mb-4'>Nominal donasi lainnya</p>
                     <input
                         type="number"
-                        value= {donation}                        
+                        value= {donation}       
+                        onChange={(e) => setDonation(e.target.value)}                  
                         className="border border-gray-300 px-4 py-2 mb-4 w-full"
                         placeholder="Masukkan Nominal Donasi"
                     />
                     
                 </div>
-                <Link to="/confirmation" className="bg-byzantine text-white font-semibold py-2 px-4 rounded text-center">
-                <button onClick={submit} >
+
+                {error && <p className="text-red-500 text-xs">{error}</p>}
+                
+                {/* <Link to="/confirmation" className="bg-byzantine text-white font-semibold py-2 px-4 rounded text-center"> */}
+                <button onClick={submit} className="bg-byzantine text-white font-semibold py-2 px-4 rounded text-center">
                         Donate
                 </button>
-                </Link>
+                {/* </Link> */}
             </form>
         </div>
     </div>
