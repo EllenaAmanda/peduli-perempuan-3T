@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import PageTemplate from "./PageTemplate";
 import Detail from "./components/Detail";
+import Donation from "./components/Donation";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
         <Route path="/" element = {<PageTemplate />}>
           <Route path="/home" element = {<Home />}/>
+          <Route path="/donation" element = {<Donation />}/>
           <Route path="/detail/:id" element={<Detail />} />
         </Route> 
       </Routes>
