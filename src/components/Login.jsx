@@ -1,7 +1,10 @@
 import { useState } from "react"
 import logo from "../assets/PP3T Logo.svg"
+import { useNavigate } from "react-router-dom"
 
 function Login() {
+    const navigate = useNavigate();
+
     const [input, setInput] = useState({
         email:"",
         password: ""
@@ -29,8 +32,8 @@ function Login() {
 
         if (user.email == input.email){
             if (user.password == input.password){
-                console.log("you may come in")
                 setError('')
+                navigate('/home')
             }
         }else{
             setError("E-mail or password is incorrect")
