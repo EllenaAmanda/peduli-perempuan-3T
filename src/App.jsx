@@ -1,12 +1,8 @@
-
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import ListHome from "./components/ListHome";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import PageTemplate from "./PageTemplate";
+import Detail from "./components/Detail";
 
 function App() {
 
@@ -19,6 +15,7 @@ function App() {
 
         <Route path="/" element = {<PageTemplate />}>
           <Route path="/home" element = {<Home />}/>
+          <Route path="/detail" element={<Detail />} />
         </Route> 
       </Routes>
 

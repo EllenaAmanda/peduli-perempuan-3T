@@ -45,7 +45,7 @@ function ListHome() {
                 ))}
             </div>
         <div className="flex justify-center mt-10">
-            <button className="bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer text-center">Selengkapnya</button>
+            <span className="bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer text-center">Selengkapnya</span>
         </div>
         </section>
     </div>

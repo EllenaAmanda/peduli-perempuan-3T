@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/PP3T Logo.svg'
 
 function Navigation() {
@@ -15,7 +16,7 @@ function Navigation() {
                 <li >Donate</li>
             </ul>
 
-            <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Log Out</span>
+            <Link to='/'> <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Log Out</span></Link>
         </nav>
     </div>
   )
