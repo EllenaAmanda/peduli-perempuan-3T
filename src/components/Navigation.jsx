@@ -11,7 +11,7 @@ function Navigation() {
             </div>
         
             <ul className="flex gap-16 font-semibold text-slate-600">
-                <li>Home</li>
+                <Link to='/home'><li>Home</li></Link> 
                 <li >About</li>
                 <li >Donate</li>
             </ul>
