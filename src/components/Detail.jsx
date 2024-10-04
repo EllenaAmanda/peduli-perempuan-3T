@@ -15,12 +15,10 @@ function Detail() {
             <div><h4 className='text-byzantine font-semibold'>Asal Daerah</h4><p>{dataPerempuan[0].daerah}</p></div>
             <div className='col-span-2'><h4 className='text-byzantine font-semibold'>Kisahku</h4><p>{dataPerempuan[0].deskripsi}</p></div>
         </div>
-        <div className='mt-8 grid grid-cols-2 w-1/4'>
-          <span className='text-byzantine font-semibold'>Dana terkumpul (Rp) </span><h3> {dataPerempuan[0].terkumpul} </h3>
-          <span className='text-byzantine font-semibold'>Target Dana (Rp)  </span><h3>{dataPerempuan[0].target} </h3>
-        </div>
-        <div className="flex justify-center mt-8">
-          <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Donasi</span>
+        <div className='mt-8 grid grid-cols-2 w-1/4 grid-rows-2'>
+          <span className='text-byzantine font-semibold'>Dana terkumpul (Rp) </span><h3 className='text-end'> {dataPerempuan[0].terkumpul} </h3>
+          <span className='text-byzantine font-semibold'>Target Dana (Rp)  </span><h3 className='text-end'>{dataPerempuan[0].target} </h3>
+          <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer col-span-2 mt-4 text-center'>Donasi</span>
         </div>
     </div>
   )
