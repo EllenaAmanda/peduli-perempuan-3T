@@ -15,7 +15,7 @@ function Navigation() {
                 <li >Donate</li>
             </ul>
 
-            <a className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Log Out</a>
+            <span className='bg-byzantine text-white font-semibold py-2 px-3 rounded cursor-pointer'>Log Out</span>
         </nav>
     </div>
   )
