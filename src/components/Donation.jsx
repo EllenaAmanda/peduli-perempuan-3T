@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Donation({ id, currentTerkumpul, onDonationSuccess }) {
     const [donation, setDonation] = useState(0);
@@ -10,7 +11,7 @@ function Donation({ id, currentTerkumpul, onDonationSuccess }) {
 
     function submit(e){
         e.preventDefault()
-        
+
     }
   return (
     
@@ -35,9 +36,11 @@ function Donation({ id, currentTerkumpul, onDonationSuccess }) {
                     />
                     
                 </div>
-                <button onClick={submit} className="bg-byzantine text-white font-semibold py-2 px-4 rounded">
+                <Link to="/confirmation" className="bg-byzantine text-white font-semibold py-2 px-4 rounded text-center">
+                <button onClick={submit} >
                         Donate
                 </button>
+                </Link>
             </form>
         </div>
     </div>
