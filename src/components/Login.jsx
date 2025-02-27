@@ -30,15 +30,16 @@ function Login() {
         e.preventDefault()
         // console.log(input)
 
-        if (user.email == input.email){
-            if (user.password == input.password){
-                setError('')
-                navigate('/home')
-            }
-        }else{
-            setError("E-mail or password is incorrect")
-            console.log("wrong")
-        } 
+        // if (user.email == input.email){
+        //     if (user.password == input.password){
+        //         setError('')
+        //         navigate('/home')
+        //     }
+        // }else{
+        //     setError("E-mail or password is incorrect")
+        //     console.log("wrong")
+        // } 
+        navigate('/home')
     }
 
     // console.log(user.email)
@@ -49,12 +50,14 @@ function Login() {
             <form className="rounded p-16 w-1/2 mx-auto bg-white/50 shadow-md ">
                 <div className="flex flex-col px-10 gap-6">
                     <img src={logo} className="w-10"/>
+                    <p className="italic text-sm">Disclaimer: Project masih dibuild seadanya untuk keperluan tugas. Mohon langsung login.</p>
                     <div>
                         <h3 className="mb-2">Email</h3>
                         <input 
                             type="text" 
+                            value={user.email}
                             name="email" 
-                            placeholder="example@gmail.com" 
+                            // placeholder="example@gmail.com" 
                             onChange={handleChange}
                             className="border rounded w-full p-2 bg-white/55"/>
                     </div>
@@ -64,7 +67,8 @@ function Login() {
                         <input 
                             type="password" 
                             name="password" 
-                            placeholder="password" 
+                            value={user.password}
+                            // placeholder="password" 
                             onChange={handleChange}
                             className="border rounded w-full p-2 bg-white/55"/>
                     </div>
